@@ -19,6 +19,12 @@ namespace OOP
         Create a course class and describe its main characteristics: course name, teacher name, course duration, number of students.
         Describe the following actions: Print (output basic information).
         Add a student to the course group (add one student to the number of students). 
+
+
+        for each of the classes create a chain of calling constructors.
+
+
+
         */
         public string FirstName { get; private set; }
         public string LastName { get; private set; }
@@ -38,6 +44,12 @@ namespace OOP
             LastName = lastName;
             Age = age;
             City = city;
+        }
+
+        public Student(string firstName, string lastName, int age, string city, Cources[] cources) : this(firstName, lastName, age, city)
+        {
+            _cources = cources;
+            Cources = cources;
         }
 
         public void Print(bool showCources = false)
