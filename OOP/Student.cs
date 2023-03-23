@@ -31,6 +31,7 @@ namespace OOP
         public int Age { get; private set; }
         public string City { get; private set; }
 
+
         private Cources[] _cources = Array.Empty<Cources>();
         public Cources[] Cources
         {

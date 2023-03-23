@@ -4,15 +4,18 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
 
-            var s1 = new Student("Andrii", "Gulak", 18, "Kyiv");
-            var s2 = new Student("Alona", "Gulak", 16, "Kyiv");
-            var s3 = new Student("Sasha", "Q", 17, "Lviv");
+            var s1 = new Student("Andrii", "G", 18, "Kyiv");
+            var s2 = new Student("Alona", "G", 16, "Kyiv");
+            var s3 = new Student("Sasha", "P", 17, "Lviv");
 
-            var c1 = new Cources("C#", 120, "Krystyna");
-            var c2 = new Cources("C# 2", 120, "Krystyna");
-            var c3 = new Cources("C# 3", 120, "Krystyna");
+            var c1 = new Cources("C# 1", 120, "Krystyna");
+            var c2 = new Cources("C# 2", 110, "Krystyna");
+            var c3 = new Cources("C# 3", 100, "Krystyna");
+            var c4 = new Cources("TEST");
+
+            c4.Print();
+
             s1.Print();
 
             Console.WriteLine("-----------------");
@@ -46,6 +49,10 @@
             //s1.RemoveCource(c3);
             Console.WriteLine("--------AFTER REMOVE---------");
             s1.Print(true);
+
+            Console.WriteLine("-------Student with cources----------");
+            var s4 = new Student("Test", "P", 4, "City", new Cources[] {c1, c2, c3, c4 });
+            s4.Print(true);
 
 
 

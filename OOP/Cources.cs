@@ -12,14 +12,29 @@ namespace OOP
     //        Describe the following actions: Print (output basic information).
     //        Add a student to the course group(add one student to the number of students). 
         //public int Id { get; set; }
-        public string Name { get; private set; }
-        public int Duration { get; private set; } // min
-        public string TeacherName { get; private set; }
-        public int NumberOfStudent { get; private set; }
+        private string _name;
+        public string Name 
+        {
+            get { return _name; } 
+            set { _name = value; }
+        
+        }
 
-        public Cources(string name, int duration, string teacherName) 
-        { 
+        public int Duration { get; set; } // min
+        public string TeacherName { get; set; }
+        public int NumberOfStudent { get;  set; }
+
+        public Cources(string name)
+        {
             Name = name;
+            Duration = 0;
+            TeacherName = "";
+            NumberOfStudent = 0;
+        }
+
+        public Cources(string name, int duration, string teacherName) : this(name)
+        { 
+            //Name = name;
             Duration = duration;
             TeacherName = teacherName;
             NumberOfStudent = 0;
