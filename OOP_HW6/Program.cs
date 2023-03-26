@@ -38,6 +38,11 @@ namespace OOP_HW6
 
             c4.Print();
 
+            //var p = new Person("P Name", "P Full name");
+            //p.GetPersonInfo();
+            //Person p1 = s2;
+            s2.GetPersonInfo();
+
         }
     }
 }

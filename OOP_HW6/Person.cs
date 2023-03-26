@@ -36,6 +36,11 @@ namespace OOP_HW6
         }
         public virtual void GetInfo()
         {
+
+        }
+
+        public void GetPersonInfo()
+        {
             Console.WriteLine($"----------  Person Info----------");
             Console.WriteLine($"FirstName = {FirstName} \t LastName = {LastName}\t Age = {GetAge()} \t City = {City}");
         }

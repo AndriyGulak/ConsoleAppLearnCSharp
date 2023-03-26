@@ -33,6 +33,10 @@ namespace OOP_HW6
             Console.WriteLine($"----------  Student Info----------");
             Console.WriteLine($"FirstName = {FirstName} \t LastName = {LastName}\t Age = {GetAge()} \t City = {City} \t Cources count = {Cources.Length}");
         }
+        public new void GetPersonInfo()
+        {
+            base.GetPersonInfo();  
+        }
         public void PrintCources()
         {
             if (Cources.Length > 0)
