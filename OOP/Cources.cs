@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace OOP
 {
-    internal class Cources
+    internal class Courses
     {
     //        Create a course class and describe its main characteristics: course name, teacher name, course duration, number of students.
     //        Describe the following actions: Print (output basic information).
@@ -24,7 +24,7 @@ namespace OOP
         public string TeacherName { get; set; }
         public int NumberOfStudent { get;  set; }
 
-        public Cources(string name)
+        public Courses(string name)
         {
             Name = name;
             Duration = 0;
@@ -32,7 +32,7 @@ namespace OOP
             NumberOfStudent = 0;
         }
 
-        public Cources(string name, int duration, string teacherName) : this(name)
+        public Courses(string name, int duration, string teacherName) : this(name)
         { 
             //Name = name;
             Duration = duration;
@@ -41,7 +41,7 @@ namespace OOP
         }
         public void Print() 
         {
-            Console.WriteLine($"CourceName = {Name} | CourceDuration = {Duration} min | TeacherName = {TeacherName} | NumberOfStudent = {NumberOfStudent}");
+            Console.WriteLine($"CourseName = {Name} | CourseDuration = {Duration} min | TeacherName = {TeacherName} | NumberOfStudent = {NumberOfStudent}");
         }
 
         public void AddStudent ()

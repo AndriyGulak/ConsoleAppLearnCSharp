@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace OOP_HW6
 {
-    internal class Cources
+    internal class Courses
     {
         private string _name = "";
         public string Name
@@ -20,7 +20,7 @@ namespace OOP_HW6
         public Teacher? Teacher { get; set; }
         public int NumberOfStudent { get; set; }
 
-        public Cources(string name)
+        public Courses(string name)
         {
             Name = name;
             Duration = 0;
@@ -28,7 +28,7 @@ namespace OOP_HW6
             NumberOfStudent = 0;
         }
 
-        public Cources(string name, int duration, Teacher teacher) : this(name)
+        public Courses(string name, int duration, Teacher teacher) : this(name)
         {
             Duration = duration;
             Teacher = teacher;
@@ -37,7 +37,7 @@ namespace OOP_HW6
         public void Print()
         {
             string teacherFullName = (Teacher == null) ? "Not assigned" : Teacher.FirstName + " " + Teacher.LastName;
-            Console.WriteLine($"CourceName = {Name} | CourceDuration = {Duration} min | TeacherName = {teacherFullName} | NumberOfStudent = {NumberOfStudent}");
+            Console.WriteLine($"CourseName = {Name} | CourseDuration = {Duration} min | TeacherName = {teacherFullName} | NumberOfStudent = {NumberOfStudent}");
         }
 
         public void AddStudent()

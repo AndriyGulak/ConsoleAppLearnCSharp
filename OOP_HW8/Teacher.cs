@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OOP_HW6
+namespace OOP_HW8
 {
     internal class Teacher : Person
     {
         public string Speciality { get; set; } = "";
-        public List<Student> students { get; set; } = new List<Student> { };
-        public List<Courses> Courses { get; set; } = new List<Courses> { };
+        public List<Student> students { get; private set; } = new List<Student> { };
+        public List<Courses> Courses { get; private set; } = new List<Courses> { };
 
         public Teacher(string firstName, string lastName) : base(firstName, lastName)
         {
@@ -24,11 +24,20 @@ namespace OOP_HW6
 
         public override void GetInfo()
         {
-            Console.WriteLine($"----------  Teacher Info ----------");
-            Console.WriteLine($"FirstName = {FirstName} | LastName = {LastName} | Age = {GetAge()} | City = {City} | " +
+            //Console.WriteLine($"-----  Teacher {FirstName} {LastName} information:");
+            Console.WriteLine($"FirstName = {FirstName} | LastName = {LastName} | Age = {GetAge()} | City = {GetCity()} | " +
                 $" Speciality = {Speciality} | Courses count = {GetCoursesCount()} | Students count = {GetStudentsCount()}");
         }
 
+        public void GetInfo(bool showCourses)
+        {
+            GetInfo();
+            if (showCourses) 
+            { 
+                PrintCourses();
+            }
+            Console.WriteLine();
+        }
         public void AddStudent(Student student)
         {
             students.Add(student);
@@ -52,6 +61,15 @@ namespace OOP_HW6
                 Course.Teacher = this;
             }
         }
+
+        public void AddCourse(List<Courses> Course)
+        {
+            foreach (Courses c in Course)
+            {
+                AddCourse(c);
+            }
+        }
+
         public void RemoveCourse(Courses Course)
         {
             if (Courses.Contains(Course)) 
@@ -59,13 +77,14 @@ namespace OOP_HW6
                 Courses.Remove(Course);
                 Course.Teacher = null;
             }
+            // delete Course from another teacher ?????
         }
 
         public void PrintCourses()
         {
             foreach (var c in Courses)
             {
-                c.Print();
+                c.GetInfo();
             }
         }
 

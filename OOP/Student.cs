@@ -32,11 +32,11 @@ namespace OOP
         public string City { get; private set; }
 
 
-        private Cources[] _cources = Array.Empty<Cources>();
-        public Cources[] Cources
+        private Courses[] _Courses = Array.Empty<Courses>();
+        public Courses[] Courses
         {
-            get { return _cources; }
-            set { _cources = value; }
+            get { return _Courses; }
+            set { _Courses = value; }
         }
 
         public Student(string firstName, string lastName, int age, string city)
@@ -47,27 +47,27 @@ namespace OOP
             City = city;
         }
 
-        public Student(string firstName, string lastName, int age, string city, Cources[] cources) : this(firstName, lastName, age, city)
+        public Student(string firstName, string lastName, int age, string city, Courses[] Courses) : this(firstName, lastName, age, city)
         {
-            _cources = cources;
-            Cources = cources;
+            _Courses = Courses;
+            Courses = Courses;
         }
 
-        public void Print(bool showCources = false)
+        public void Print(bool showCourses = false)
         {
             Console.WriteLine($"FirstName = {FirstName}");
             Console.WriteLine($"LastName  = {LastName}");
             Console.WriteLine($"Age       = {Age}");
             Console.WriteLine($"City      = {City}");
-            if(showCources) 
-                    PrintCources();
+            if(showCourses) 
+                    PrintCourses();
         }
 
-        public void PrintCources()
+        public void PrintCourses()
         {
-            if (Cources.Length > 0)
+            if (Courses.Length > 0)
             {
-                foreach (var c in Cources)
+                foreach (var c in Courses)
                 {
                     c.Print();
                 }
@@ -80,46 +80,46 @@ namespace OOP
             }
         }
 
-        public void AddCource(Cources cource)
+        public void AddCourse(Courses Course)
         {
-            Cources[] c = Cources;
+            Courses[] c = Courses;
 
-            if (Cources.Length == 0)
+            if (Courses.Length == 0)
             {
-                Cources = new Cources[1] { cource };
-                cource.AddStudent();
+                Courses = new Courses[1] { Course };
+                Course.AddStudent();
             }
             else
             {
-                Array.Resize(ref c, Cources.Length + 1);
-                c[Cources.Length] = cource;
-                Cources = c;
-                cource.AddStudent();
+                Array.Resize(ref c, Courses.Length + 1);
+                c[Courses.Length] = Course;
+                Courses = c;
+                Course.AddStudent();
             }
         }
 
-        public void RemoveCource(Cources cource)
+        public void RemoveCourse(Courses Course)
         {
 
-            var index = Array.IndexOf(Cources, cource);
-            Cources[] c = Cources;
+            var index = Array.IndexOf(Courses, Course);
+            Courses[] c = Courses;
 
             for (int i = index; i < c.Length - 1; i++)
             {
                 c[i] = c[i + 1];
             }
             Array.Resize(ref c, c.Length - 1);
-            Cources = c;
-            cource.RemoveStudent();
+            Courses = c;
+            Course.RemoveStudent();
         }
 
-        public void AddCource(string courceName)
+        public void AddCourse(string CourseName)
         {
             //
         }
 
 
-        public void RemoveCource(string courceName)
+        public void RemoveCourse(string CourseName)
         {
             //
         }

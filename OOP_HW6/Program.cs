@@ -14,15 +14,15 @@ namespace OOP_HW6
 
             var teacher = new Teacher("Krystyna", "Hurieieva");
 
-            var c1 = new Cources("C# 1", 120, teacher);
-            var c2 = new Cources("C# 2", 110, teacher);
-            var c3 = new Cources("C# 3", 100, teacher);
-            var c4 = new Cources("English");
+            var c1 = new Courses("C# 1", 120, teacher);
+            var c2 = new Courses("C# 2", 110, teacher);
+            var c3 = new Courses("C# 3", 100, teacher);
+            var c4 = new Courses("English");
 
-            var cSharpFullCource = new Cources[3] { c1, c2, c3 }; 
+            var cSharpFullCourse = new Courses[3] { c1, c2, c3 }; 
 
             var s1 = new Student("Andrii", "Gulak");
-            var s2 = new Student("Sasha", "Pereverzev", new DateTime(1984, 1, 15), "Brovary", cSharpFullCource);
+            var s2 = new Student("Sasha", "Pereverzev", new DateTime(1984, 1, 15), "Brovary", cSharpFullCourse);
 
 
             teacher.GetInfo();
