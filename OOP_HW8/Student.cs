@@ -63,14 +63,23 @@ namespace OOP_HW8
 
         public void AddCourse(Courses Course)
         {
-            if (!Courses.Contains(Course)) { Courses.Add(Course); }
-            if (!Course.students.Contains(this)) { Course.AddStudent(this); }
+            if (!Courses.Contains(Course)) 
+            { 
+                Courses.Add(Course);
+                if (!Course.students.Contains(this)) { Course.AddStudent(this); }
+            }
+            else throw (new InvalidCoursesException("Student already attend the course!"));
         }
 
         public void RemoveCourse(Courses Course)
         {
-            if (Courses.Contains(Course)) { Courses.Remove(Course); };
-            if (Course.students.Contains(this)) Course.RemoveStudent(this);
+            if (Courses.Contains(Course)) 
+            { 
+                Courses.Remove(Course);
+                if (Course.students.Contains(this)) Course.RemoveStudent(this);
+            }
+            else throw (new InvalidCoursesException("Student doesn't attend the course!"));
+
         }
 
         public int GetCoursesCount()

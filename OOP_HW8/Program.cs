@@ -69,9 +69,7 @@ namespace OOP_HW8
 
             //Console.WriteLine("PERSON ****************************************");
             //Person t1 = (Person)teacher1;
-
             //t1.GetPersonInfo();
-
             //teacher1.PrintCourses();
 
             var teacher3 = new Teacher("Test Name", "Test");
@@ -81,18 +79,13 @@ namespace OOP_HW8
             //teacher3.PrintCourses();
 
 
-
             teacher3.AddCourse(e1);
             teacher3.GetInfo(true);
-
             teacher1.GetInfo(true);
 
             var s1 = new Student("Andrii", "Gulak");
             //s1.Courses = new List<Courses> { e1 };
             s1.AddCourse(e1);
-
-
-
 
 
             var s2 = new Student("Sasha", "Pereverzev", new DateTime(1984, 1, 15), "Brovary", cSharpFull);

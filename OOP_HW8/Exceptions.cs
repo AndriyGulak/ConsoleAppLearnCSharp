@@ -13,4 +13,10 @@ namespace OOP_HW8
         }
     }
 
+    public class InvalidCoursesException : Exception
+    {
+        public InvalidCoursesException(string message) : base(message)
+        {
+        }
+    }
 }
