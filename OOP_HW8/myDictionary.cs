@@ -9,6 +9,7 @@ namespace OOP_HW8
 {
     public static class MyDictionary
     {
+
          static Dictionary<int, string> NameDictionary = new()
          {
                 { 1, "Liam" },

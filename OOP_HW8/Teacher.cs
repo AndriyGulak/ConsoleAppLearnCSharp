@@ -40,13 +40,15 @@ namespace OOP_HW8
         }
         public void AddStudent(Student student)
         {
-            students.Add(student);
+            //students.Add(student);
 
             if (!students.Contains(student)) { students.Add(student); }
+            else throw new InvalidPersonException("Student already exists!");
         }
         public void RemoveStudent(Student student)
         {
             if (students.Contains(student)) { students.Remove(student); }
+            else throw new InvalidPersonException("Incorrect student!");
         }
         public int GetStudentsCount()
         {

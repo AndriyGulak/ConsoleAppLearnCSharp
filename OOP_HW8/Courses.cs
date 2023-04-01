@@ -57,7 +57,7 @@ namespace OOP_HW8
                 students.Add(student);
                 if (!student.Courses.Contains(this)) { student.AddCourse(this); }
             }
-            else throw (new InvalidPersonException("Student already exists!"));
+            else throw new InvalidPersonException("Student already exists!");
         }
         public void RemoveStudent(Student student)
         {

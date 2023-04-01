@@ -25,7 +25,7 @@ namespace OOP_HW6
             {
                 c.AddStudent();
             }
-            Courses = Courses;
+            this.Courses = Courses;
         }
 
         public override void GetInfo()

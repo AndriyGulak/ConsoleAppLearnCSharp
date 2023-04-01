@@ -15,8 +15,13 @@ namespace OOP_HW8
 
         public Person(string firstName, string lastName)
         {
-            FirstName = firstName;
-            LastName = lastName;
+            if (firstName == "" || lastName == "")
+                throw new InvalidPersonException("Name or LastName can't be empty");
+            else 
+            {
+                FirstName = firstName;
+                LastName = lastName;
+            }
         }
 
         public Person(string firstName, string lastName, DateTime dob, string city) : this(firstName, lastName)

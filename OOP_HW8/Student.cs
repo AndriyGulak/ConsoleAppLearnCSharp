@@ -68,7 +68,7 @@ namespace OOP_HW8
                 Courses.Add(Course);
                 if (!Course.students.Contains(this)) { Course.AddStudent(this); }
             }
-            else throw (new InvalidCoursesException("Student already attend the course!"));
+            else throw new InvalidCoursesException("Student already attend the course!");
         }
 
         public void RemoveCourse(Courses Course)
@@ -78,7 +78,7 @@ namespace OOP_HW8
                 Courses.Remove(Course);
                 if (Course.students.Contains(this)) Course.RemoveStudent(this);
             }
-            else throw (new InvalidCoursesException("Student doesn't attend the course!"));
+            else throw new InvalidCoursesException("Student doesn't attend the course!");
 
         }
 

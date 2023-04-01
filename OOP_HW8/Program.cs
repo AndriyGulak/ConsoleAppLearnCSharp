@@ -4,6 +4,7 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
 using System.Xml.Linq;
 using OOP_HW8;
 using System.ComponentModel;
+using System.Collections;
 
 namespace OOP_HW8
 {
@@ -60,10 +61,19 @@ namespace OOP_HW8
             var searchStr = Console.ReadLine();
 
             var studentRes = students.Where(s => s.LastName.Contains(searchStr));
-            foreach (var s in studentRes)
+            try
             {
-                s.AddCourse(c1);
+                foreach (var s in studentRes)
+                {
+                    s.AddCourse(c1);
+                }
             }
+            catch (Exception ex)
+            {
+
+                Console.WriteLine(ex.Message);
+            }
+
             c1.GetInfo(true);
 
 
@@ -96,10 +106,10 @@ namespace OOP_HW8
             {
                 e1.AddStudent(s2);
             }
-            catch (InvalidPersonException e)
+            catch (Exception ex) //InvalidPersonException
             {
 
-                Console.WriteLine($"AddStudent method: {e.Message}");
+                Console.WriteLine($"AddStudent method: {ex.Message}");
             }
            
             //e1.AddStudent(c1);
